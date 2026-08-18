@@ -1,127 +1,132 @@
-import json
 import os
-import sqlite3
-from datetime import date
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from serpapi import GoogleSearch
 
-# ---------------------------------------------------------
-# 1. DATABASE SETUP
-# ---------------------------------------------------------
-conn = sqlite3.connect("flight_tracker.db")
-cursor = conn.cursor()
+# Configuration & Credentials
+SERPAPI_KEY = os.environ.get("SERPAPI_KEY", "YOUR_SERPAPI_KEY_HERE")
+EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS", "your_email@gmail.com")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD", "your_app_password")
+RECIPIENT_EMAIL = os.environ.get("RECIPIENT_EMAIL", "recipient@gmail.com")
 
-cursor.execute(
-    """
-    CREATE TABLE IF NOT EXISTS flight_data (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        city TEXT,
-        airport_name TEXT,
-        code TEXT,
-        price REAL,
-        date_searched TEXT
-    )
-"""
-)
-conn.commit()
+# Flight Search Parameters
+DEPARTURE_AIRPORT = "YYZ"
+ARRIVAL_AIRPORT = "YVR"
+OUTBOUND_DATE = "2026-10-10"
+RETURN_DATE = "2026-10-17"
+PRICE_THRESHOLD = 450.00  # Trigger email alert if price drops below this amount (CAD/USD)
 
-# ---------------------------------------------------------
-# 2. FLEXIBLE SUMMER DATE WINDOWS TO TEST
-# ---------------------------------------------------------
-api_key = os.getenv("SERPAPI_KEY")
-today_str = date.today().isoformat()
 
-# Test 3 different 2-week trip windows across Summer 2027
-# (Early July, Late July, Early August)
-sample_windows = [
-    {"outbound": "2027-07-03", "return": "2027-07-17"},
-    {"outbound": "2027-07-17", "return": "2027-07-31"},
-    {"outbound": "2027-08-07", "return": "2027-08-21"},
-]
+def fetch_flight_prices():
+    """Queries SerpApi Google Flights engine for updated pricing."""
+    params = {
+        "engine": "google_flights",
+        "departure_id": DEPARTURE_AIRPORT,
+        "arrival_id": ARRIVAL_AIRPORT,
+        "outbound_date": OUTBOUND_DATE,
+        "return_date": RETURN_DATE,
+        "currency": "CAD",
+        "hl": "en",
+        "api_key": SERPAPI_KEY,
+    }
 
-if os.path.exists("airports.json"):
-    with open("airports.json", "r", encoding="utf-8") as f:
-        airports = json.load(f)
-else:
-    print("Warning: airports.json not found!")
-    airports = []
+    search = GoogleSearch(params)
+    results = search.get_dict()
 
-for item in airports:
-    base_city = item.get("city")
-    code = item.get("code")
-    airport_name = item.get("airport_name", code)
+    flights_data = []
 
-    display_label = (
-        f"{base_city} ({code})" if base_city == "Paris" else base_city
-    )
-
-    if not api_key:
-        print("SERPAPI_KEY environment variable not set. Skipping API calls.")
-        break
-
-    lowest_found_price = None
-
-    # Loop through each sample date window to find the best price
-    for window in sample_windows:
-        try:
-            params = {
-                "engine": "google_flights",
-                "departure_id": "YYZ",
-                "arrival_id": code,
-                "outbound_date": window["outbound"],
-                "return_date": window["return"],
-                "type": "2",  # <--- Google Flights explicit Round-Trip type flag
-                "currency": "CAD",
-                "hl": "en",
-                "api_key": api_key,
+    # Parse best flights
+    best_flights = results.get("best_flights", [])
+    for flight in best_flights:
+        price = flight.get("price")
+        airline = flight["flights"][0].get("airline", "Unknown Airline")
+        flights_data.append(
+            {
+                "type": "Best Flight",
+                "price": price,
+                "airline": airline,
             }
-
-            search = GoogleSearch(params)
-            results = search.get_dict()
-
-            flights = results.get("best_flights", []) + results.get(
-                "other_flights", []
-            )
-
-            if flights and "price" in flights[0]:
-                price = flights[0]["price"]
-                # Keep track of the cheapest option across all checked windows
-                if lowest_found_price is None or price < lowest_found_price:
-                    lowest_found_price = price
-
-        except Exception as e:
-            print(
-                f"Error checking window {window['outbound']} for {display_label}: {e}"
-            )
-
-    # Save the lowest price found across all flexible date windows to the database
-    if lowest_found_price is not None:
-        cursor.execute(
-            """
-            INSERT INTO flight_data (city, airport_name, code, price, date_searched)
-            VALUES (?, ?, ?, ?, ?)
-        """,
-            (display_label, airport_name, code, lowest_found_price, today_str),
         )
+
+    # Parse other flights
+    other_flights = results.get("other_flights", [])
+    for flight in other_flights:
+        price = flight.get("price")
+        airline = flight["flights"][0].get("airline", "Unknown Airline")
+        flights_data.append(
+            {
+                "type": "Other Flight",
+                "price": price,
+                "airline": airline,
+            }
+        )
+
+    return flights_data
+
+
+def send_email_alert(lowest_price, flight_details):
+    """Sends an SMTP email notification when a price drop is detected."""
+    msg = MIMEMultipart()
+    msg["From"] = EMAIL_ADDRESS
+    msg["To"] = RECIPIENT_EMAIL
+    msg["Subject"] = (
+        f"✈️ Price Alert: Flight to {ARRIVAL_AIRPORT} is down to ${lowest_price}!"
+    )
+
+    body = f"""
+    Great news! 
+    
+    A flight matching your criteria ({DEPARTURE_AIRPORT} to {ARRIVAL_AIRPORT}) for dates {OUTBOUND_DATE} to {RETURN_DATE} has dropped below your threshold of ${PRICE_THRESHOLD:.2f}.
+    
+    Lowest Price Found: ${lowest_price}
+    Airline: {flight_details.get('airline', 'N/A')}
+    
+    Check Google Flights now to secure this rate.
+    """
+
+    msg.attach(MIMEText(body, "plain"))
+
+    try:
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            server.send_message(msg)
+        print("Email alert sent successfully.")
+    except Exception as e:
+        print(f"Failed to send email alert: {e}")
+
+
+def main():
+    print(
+        f"Checking flights from {DEPARTURE_AIRPORT} to {ARRIVAL_AIRPORT} ({OUTBOUND_DATE} to {RETURN_DATE})..."
+    )
+    flights = fetch_flight_prices()
+
+    if not flights:
+        print("No flight results found.")
+        return
+
+    # Find minimum price flight
+    valid_flights = [f for f in flights if f["price"] is not None]
+    if not valid_flights:
+        print("No priced flights available.")
+        return
+
+    cheapest_flight = min(valid_flights, key=lambda x: x["price"])
+    lowest_price = cheapest_flight["price"]
+
+    print(f"Cheapest option found: ${lowest_price} ({cheapest_flight['airline']})")
+
+    if lowest_price <= PRICE_THRESHOLD:
         print(
-            f"Saved Best Summer Fare: {display_label} - ${lowest_found_price} CAD"
+            f"Price (${lowest_price}) is below threshold (${PRICE_THRESHOLD}). Triggering alert..."
         )
+        send_email_alert(lowest_price, cheapest_flight)
     else:
-        print(f"No summer prices found yet for {display_label}")
+        print(
+            f"Price (${lowest_price}) is still above threshold (${PRICE_THRESHOLD}). No alert sent."
+        )
 
-conn.commit()
 
-# ---------------------------------------------------------
-# 3. EXPORT DATABASE TO data.json
-# ---------------------------------------------------------
-cursor.execute("SELECT city, price, date_searched FROM flight_data")
-rows = cursor.fetchall()
-
-json_data = [
-    {"city": row[0], "price": row[1], "date": row[2]} for row in rows
-]
-
-with open("data.json", "w", encoding="utf-8") as f:
-    json.dump(json_data, f, indent=2)
-
-print(f"Exported {len(json_data)} total records to data.json")
-conn.close()
+if __name__ == "__main__":
+    main()
