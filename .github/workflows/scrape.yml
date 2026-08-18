@@ -2,13 +2,14 @@ name: Daily Flight Price Scraper
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    # Runs every 2 days at midnight UTC to stay within 100 free monthly API calls
+    - cron: '0 0 */2 * *'
   workflow_dispatch:
 
 jobs:
   scrape-and-save:
     runs-on: ubuntu-latest
-    timeout-minutes: 5 # Automatically kills the job if it hangs past 5 minutes
+    timeout-minutes: 2
 
     steps:
       - name: Check out repository code
@@ -23,9 +24,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          playwright install chromium --with-deps
 
       - name: Run flight tracker script
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: python tracker.py
 
       - name: Save updated database to repository
