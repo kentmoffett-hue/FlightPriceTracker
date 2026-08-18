@@ -32,6 +32,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "action@github.com"
-          git add FlightPriceTracker.db
+          git add Flight_Tracker.db
           git commit -m "Auto-update flight prices [skip ci]" || exit 0
           git push
