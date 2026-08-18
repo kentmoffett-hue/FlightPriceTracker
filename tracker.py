@@ -6,6 +6,21 @@ import sqlite3
 conn = sqlite3.connect("flight_tracker.db")
 cursor = conn.cursor()
 
+# 2. Ensure table exists BEFORE querying or inserting data
+cursor.execute(
+    """
+    CREATE TABLE IF NOT EXISTS flight_data (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        city TEXT,
+        airport_name TEXT,
+        code TEXT,
+        price REAL,
+        date_searched TEXT
+    )
+"""
+)
+conn.commit()
+
 # Query all records
 cursor.execute("SELECT city, airport_name, code, price, date_searched FROM flight_data")
 rows = cursor.fetchall()
