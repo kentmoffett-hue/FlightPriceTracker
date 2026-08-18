@@ -1,0 +1,56 @@
+[
+  {
+    "city": "Barcelona",
+    "country": "Spain",
+    "airport_name": "Josep Tarradellas Barcelona-El Prat Airport",
+    "code": "BCN"
+  },
+  {
+    "city": "Paris",
+    "country": "France",
+    "airport_name": "Charles de Gaulle Airport",
+    "code": "CDG"
+  },
+  {
+    "city": "Paris",
+    "country": "France",
+    "airport_name": "Paris Orly Airport",
+    "code": "ORY"
+  },
+  {
+    "city": "Edinburgh",
+    "country": "Scotland",
+    "airport_name": "Edinburgh Airport",
+    "code": "EDI"
+  },
+  {
+    "city": "Rome",
+    "country": "Italy",
+    "airport_name": "Rome-Fiumicino International Airport \"Leonardo da Vinci\"",
+    "code": "FCO"
+  },
+  {
+    "city": "Ponta Delgada (Azores)",
+    "country": "Portugal",
+    "airport_name": "João Paulo II Airport",
+    "code": "PDL"
+  },
+  {
+    "city": "San José",
+    "country": "Costa Rica",
+    "airport_name": "Juan Santamaría International Airport",
+    "code": "SJO"
+  },
+  {
+    "city": "Panama City",
+    "country": "Panama",
+    "airport_name": "Tocumen International Airport",
+    "code": "PTY"
+  },
+  {
+    "city": "St. John's",
+    "country": "Canada",
+    "airport_name": "St. John's International Airport",
+    "code": "YYT"
+  }
+]
