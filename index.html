@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vacation Flight Price Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="font-family: sans-serif; padding: 2rem; background: #f9f9f9;">
+
+  <h2>1-Year Flight Price Trend (Toronto to Targets)</h2>
+  <div style="width: 80%; margin: auto; background: white; padding: 20px; border-radius: 8px;">
+    <canvas id="priceChart"></canvas>
+  </div>
+
+  <script>
+    // Fetch data from your backend database endpoint
+    async function loadChartData() {
+      // Dummy structure representing the database output:
+      const dataFromDb = [
+        { date: '2026-08-16', Porto: 1100, Edinburgh: 950, Pyrenees: 1250 },
+        { date: '2026-08-17', Porto: 1080, Edinburgh: 940, Pyrenees: 1200 },
+        // ... updates daily over the next year
+      ];
+
+      const labels = dataFromDb.map(row => row.date);
+
+      const ctx = document.getElementById('priceChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Porto (Portugal)',
+              data: dataFromDb.map(row => row.Porto),
+              borderColor: '#e74c3c',
+              tension: 0.2
+            },
+            {
+              label: 'Edinburgh (Scotland)',
+              data: dataFromDb.map(row => row.Edinburgh),
+              borderColor: '#3498db',
+              tension: 0.2
+            },
+            {
+              label: 'Toulouse (Pyrenees)',
+              data: dataFromDb.map(row => row.Pyrenees),
+              borderColor: '#2ecc71',
+              tension: 0.2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: { title: { display: true, text: 'Date (Last 365 Days)' } },
+            y: { title: { display: true, text: 'Price (CAD)' } }
+          }
+        }
+      });
+    }
+
+    loadChartData();
+  </script>
+</body>
+</html>
