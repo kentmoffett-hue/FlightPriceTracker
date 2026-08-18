@@ -12,12 +12,6 @@
     "code": "CDG"
   },
   {
-    "city": "Paris",
-    "country": "France",
-    "airport_name": "Paris Orly Airport",
-    "code": "ORY"
-  },
-  {
     "city": "Edinburgh",
     "country": "Scotland",
     "airport_name": "Edinburgh Airport",
