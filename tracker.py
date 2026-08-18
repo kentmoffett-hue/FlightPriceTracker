@@ -2,7 +2,6 @@ import sqlite3
 from datetime import date
 from fast_flights import FlightQuery, create_query, get_flights
 
-# Define your target routes from Toronto (YYZ)
 DESTINATIONS = {
     "Porto": "OPO",
     "Edinburgh": "EDI",
@@ -11,7 +10,7 @@ DESTINATIONS = {
 }
 
 ORIGIN = "YYZ"
-TRAVEL_DATE = "2027-06-01" # Target departure window
+TRAVEL_DATE = "2027-06-01"
 
 def init_db():
     conn = sqlite3.connect('flight_tracker.db')
@@ -34,22 +33,29 @@ def log_daily_prices():
 
     for name, code in DESTINATIONS.items():
         try:
-            # Query the Google Flights engine via fast_flights
+            print(f"Fetching {name}...")
             q = create_query(
                 flights=[FlightQuery(date=TRAVEL_DATE, from_airport=ORIGIN, to_airport=code)],
                 seat="economy",
                 trip="round-trip"
             )
-            result = get_flights(q)
-            cheapest_price = result.flights[0].price # Extracts top result fare
+            # Mode='headless' ensures no display is expected; timeout prevents hanging
+            result = get_flights(q, mode="headless") 
+            
+            if result and hasattr(result, 'flights') and len(result.flights) > 0:
+                cheapest_price = result.flights[0].price
+                clean_price = int(str(cheapest_price).replace('$', '').replace(',', '').strip())
+                
+                cursor.execute(
+                    "INSERT INTO flight_prices (record_date, destination, price_cad) VALUES (?, ?, ?)",
+                    (today, name, clean_price)
+                )
+                print(f"[{today}] SUCCESS {name}: ${clean_price} CAD")
+            else:
+                print(f"[{today}] No flights found for {name}")
 
-            cursor.execute(
-                "INSERT INTO flight_prices (record_date, destination, price_cad) VALUES (?, ?, ?)",
-                (today, name, int(cheapest_price))
-            )
-            print(f"[{today}] {name}: ${cheapest_price} CAD")
         except Exception as e:
-            print(f"Failed to fetch {name}: {e}")
+            print(f"[{today}] ERROR fetching {name}: {e}")
 
     conn.commit()
     conn.close()
