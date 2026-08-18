@@ -31,13 +31,12 @@ jobs:
         run: python tracker.py
 
       - name: Commit and push updated database
+        shell: bash
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add flight_tracker.db
-          # Only commit and push if the database actually changed
-          git status --porcelain
-          if [[ -n $(git status --porcelain) ]]; then
+          if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Automated flight data update [skip ci]"
             git push
           else
