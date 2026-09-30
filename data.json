@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "city": "Barcelona",
+    "price": 1075.0,
+    "date": "2026-09-30"
+  },
+  {
+    "city": "Paris (CDG)",
+    "price": 1233.0,
+    "date": "2026-09-30"
+  },
+  {
+    "city": "Edinburgh",
+    "price": 1278.0,
+    "date": "2026-09-30"
+  },
+  {
+    "city": "Rome",
+    "price": 1114.0,
+    "date": "2026-09-30"
+  },
+  {
+    "city": "Ponta Delgada (Azores)",
+    "price": 896.0,
+    "date": "2026-09-30"
+  },
+  {
+    "city": "San Jos\u00e9",
+    "price": 900.0,
+    "date": "2026-09-30"
+  },
+  {
+    "city": "Panama City",
+    "price": 907.0,
+    "date": "2026-09-30"
+  },
+  {
+    "city": "St. John's",
+    "price": 787.0,
+    "date": "2026-09-30"
+  }
+]
