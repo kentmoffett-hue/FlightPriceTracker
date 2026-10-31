@@ -598,5 +598,45 @@
     "city": "St. John's",
     "price": 680.0,
     "date": "2026-10-29"
+  },
+  {
+    "city": "Barcelona",
+    "price": 1166.0,
+    "date": "2026-10-31"
+  },
+  {
+    "city": "Paris (CDG)",
+    "price": 1210.0,
+    "date": "2026-10-31"
+  },
+  {
+    "city": "Edinburgh",
+    "price": 1362.0,
+    "date": "2026-10-31"
+  },
+  {
+    "city": "Rome",
+    "price": 1075.0,
+    "date": "2026-10-31"
+  },
+  {
+    "city": "Ponta Delgada (Azores)",
+    "price": 1014.0,
+    "date": "2026-10-31"
+  },
+  {
+    "city": "San Jos\u00e9",
+    "price": 906.0,
+    "date": "2026-10-31"
+  },
+  {
+    "city": "Panama City",
+    "price": 880.0,
+    "date": "2026-10-31"
+  },
+  {
+    "city": "St. John's",
+    "price": 680.0,
+    "date": "2026-10-31"
   }
 ]
