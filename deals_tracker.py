@@ -64,8 +64,10 @@ try:
             dest_code = deal.get("arrival_airport_code") or deal.get(
                 "destination_id"
             )
+            # Added "name" as the primary key for destination/city names
             city_name = (
-                deal.get("arrival_airport_name")
+                deal.get("name")
+                or deal.get("arrival_airport_name")
                 or deal.get("destination_name")
                 or deal.get("snippet")
             )
