@@ -79,7 +79,48 @@
   <h2>Flexible July 2027 Deals Tracker</h2>
   <canvas id="dealsChart"></canvas>
 </div>
+<div style="width: 80%; margin: 40px auto;">
+  <h2>Flexible July 2027 Deals Tracker</h2>
+  <table id="dealsTable" style="width: 100%; border-collapse: collapse; margin-top: 20px; font-family: sans-serif;">
+    <thead>
+      <tr style="background-color: #f2f2f2; border-bottom: 2px solid #ddd; text-align: left;">
+        <th style="padding: 12px; border: 1px solid #ddd;">City</th>
+        <th style="padding: 12px; border: 1px solid #ddd;">Best Price (CAD)</th>
+        <th style="padding: 12px; border: 1px solid #ddd;">Outbound Date</th>
+        <th style="padding: 12px; border: 1px solid #ddd;">Return Date</th>
+        <th style="padding: 12px; border: 1px solid #ddd;">Last Checked</th>
+      </tr>
+    </thead>
+    <tbody id="dealsTableBody">
+      <!-- JavaScript will automatically populate rows here -->
+    </tbody>
+  </table>
+</div>
+  fetch('deals_data.json')
+  .then(response => response.json())
+  .then(dealsData => {
+    const tableBody = document.getElementById('dealsTableBody');
+    tableBody.innerHTML = ''; // Clear any existing rows
 
+    // Sort deals from cheapest to most expensive
+    dealsData.sort((a, b) => a.price - b.price);
+
+    dealsData.forEach(deal => {
+      const row = document.createElement('tr');
+      row.style.borderBottom = '1px solid #ddd';
+
+      row.innerHTML = `
+        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">${deal.city}</td>
+        <td style="padding: 10px; border: 1px solid #ddd; color: #2e7d32; font-weight: bold;">$${deal.price} CAD</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">${deal.outbound}</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">${deal.return}</td>
+        <td style="padding: 10px; border: 1px solid #ddd; color: #666; font-size: 0.9em;">${deal.date}</td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  })
+  .catch(error => console.error('Error loading deals_data.json:', error));
 <script>
   // Script to load deals_data.json into the second chart
   fetch('deals_data.json')
