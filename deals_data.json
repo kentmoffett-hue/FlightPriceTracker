@@ -1,6 +1,7 @@
 [
   {
     "city": "MCT",
+    "code": "MCT",
     "price": 1451.0,
     "outbound": "2027-07-15",
     "return": "2027-07-21",
@@ -8,6 +9,7 @@
   },
   {
     "city": "SVD",
+    "code": "SVD",
     "price": 820.0,
     "outbound": "2027-07-15",
     "return": "2027-07-22",
@@ -15,6 +17,7 @@
   },
   {
     "city": "HAV",
+    "code": "HAV",
     "price": 926.0,
     "outbound": "2027-07-05",
     "return": "2027-07-14",
@@ -22,6 +25,7 @@
   },
   {
     "city": "HUX",
+    "code": "HUX",
     "price": 975.0,
     "outbound": "2027-07-01",
     "return": "2027-07-07",
@@ -29,6 +33,7 @@
   },
   {
     "city": "DAD",
+    "code": "DAD",
     "price": 1452.0,
     "outbound": "2027-07-08",
     "return": "2027-07-16",
@@ -36,6 +41,7 @@
   },
   {
     "city": "AKL",
+    "code": "AKL",
     "price": 1919.0,
     "outbound": "2027-07-03",
     "return": "2027-07-12",
@@ -43,6 +49,7 @@
   },
   {
     "city": "BNE",
+    "code": "BNE",
     "price": 2003.0,
     "outbound": "2027-07-29",
     "return": "2027-08-04",
@@ -50,6 +57,7 @@
   },
   {
     "city": "SJU",
+    "code": "SJU",
     "price": 573.0,
     "outbound": "2027-07-05",
     "return": "2027-07-13",
@@ -57,6 +65,7 @@
   },
   {
     "city": "PMI",
+    "code": "PMI",
     "price": 891.0,
     "outbound": "2027-07-11",
     "return": "2027-07-19",
@@ -64,6 +73,7 @@
   },
   {
     "city": "AYT",
+    "code": "AYT",
     "price": 1310.0,
     "outbound": "2027-07-03",
     "return": "2027-07-10",
@@ -71,6 +81,7 @@
   },
   {
     "city": "LOS",
+    "code": "LOS",
     "price": 1488.0,
     "outbound": "2027-07-02",
     "return": "2027-07-08",
@@ -78,6 +89,7 @@
   },
   {
     "city": "DPS",
+    "code": "DPS",
     "price": 1707.0,
     "outbound": "2027-07-26",
     "return": "2027-08-04",
@@ -85,6 +97,7 @@
   },
   {
     "city": "DAR",
+    "code": "DAR",
     "price": 1719.0,
     "outbound": "2027-07-03",
     "return": "2027-07-12",
@@ -92,6 +105,7 @@
   },
   {
     "city": "FRA",
+    "code": "FRA",
     "price": 927.0,
     "outbound": "2027-07-12",
     "return": "2027-07-18",
@@ -99,6 +113,7 @@
   },
   {
     "city": "DOH",
+    "code": "DOH",
     "price": 1403.0,
     "outbound": "2027-07-02",
     "return": "2027-07-08",
@@ -106,6 +121,7 @@
   },
   {
     "city": "MEL",
+    "code": "MEL",
     "price": 1982.0,
     "outbound": "2027-07-31",
     "return": "2027-08-06",
@@ -113,6 +129,7 @@
   },
   {
     "city": "HEL",
+    "code": "HEL",
     "price": 1091.0,
     "outbound": "2027-07-03",
     "return": "2027-07-11",
@@ -120,6 +137,7 @@
   },
   {
     "city": "KRK",
+    "code": "KRK",
     "price": 1184.0,
     "outbound": "2027-07-05",
     "return": "2027-07-14",
@@ -127,6 +145,7 @@
   },
   {
     "city": "SLU",
+    "code": "SLU",
     "price": 1203.0,
     "outbound": "2027-07-05",
     "return": "2027-07-11",
@@ -134,6 +153,7 @@
   },
   {
     "city": "TUN",
+    "code": "TUN",
     "price": 1248.0,
     "outbound": "2027-07-02",
     "return": "2027-07-08",
@@ -141,6 +161,7 @@
   },
   {
     "city": "KUL",
+    "code": "KUL",
     "price": 1445.0,
     "outbound": "2027-07-09",
     "return": "2027-07-15",
@@ -148,6 +169,7 @@
   },
   {
     "city": "CEB",
+    "code": "CEB",
     "price": 1473.0,
     "outbound": "2027-07-18",
     "return": "2027-07-24",
@@ -155,6 +177,7 @@
   },
   {
     "city": "ABV",
+    "code": "ABV",
     "price": 1528.0,
     "outbound": "2027-07-02",
     "return": "2027-07-09",
@@ -162,6 +185,7 @@
   },
   {
     "city": "MRU",
+    "code": "MRU",
     "price": 1922.0,
     "outbound": "2027-07-05",
     "return": "2027-07-12",
@@ -169,6 +193,7 @@
   },
   {
     "city": "LYS",
+    "code": "LYS",
     "price": 1118.0,
     "outbound": "2027-07-08",
     "return": "2027-07-14",
@@ -176,6 +201,7 @@
   },
   {
     "city": "LCA",
+    "code": "LCA",
     "price": 1289.0,
     "outbound": "2027-07-03",
     "return": "2027-07-11",
@@ -183,6 +209,7 @@
   },
   {
     "city": "ACC",
+    "code": "ACC",
     "price": 1640.0,
     "outbound": "2027-07-02",
     "return": "2027-07-08",
@@ -190,6 +217,7 @@
   },
   {
     "city": "MLE",
+    "code": "MLE",
     "price": 2101.0,
     "outbound": "2027-07-08",
     "return": "2027-07-14",
@@ -197,6 +225,7 @@
   },
   {
     "city": "FDF",
+    "code": "FDF",
     "price": 744.0,
     "outbound": "2027-07-05",
     "return": "2027-07-11",
@@ -204,6 +233,7 @@
   },
   {
     "city": "CMN",
+    "code": "CMN",
     "price": 1183.0,
     "outbound": "2027-07-08",
     "return": "2027-07-14",
