@@ -67,5 +67,27 @@
 
     loadChartData();
   </script>
+  <div style="width: 80%; margin: auto;">
+  <h2>Fixed Date Tracker (July 10 - 17, 2027)</h2>
+  <canvas id="flightChart"></canvas>
+</div>
+
+<hr style="margin: 40px 0;">
+
+<!-- New Flexible Deals Chart Section -->
+<div style="width: 80%; margin: auto;">
+  <h2>Flexible July 2027 Deals Tracker</h2>
+  <canvas id="dealsChart"></canvas>
+</div>
+
+<script>
+  // Script to load deals_data.json into the second chart
+  fetch('deals_data.json')
+    .then(response => response.json())
+    .then(data => {
+      // Group data by city for Chart.js dataset formatting...
+      // (Or hook this up similarly to how your primary chart processes data.json)
+    });
+</script>
 </body>
 </html>
