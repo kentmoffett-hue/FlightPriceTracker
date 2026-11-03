@@ -121,12 +121,15 @@
 
           row.style.cssText = highlightStyle;
 
+let displayName = deal.city && deal.city !== deal.code ? `${deal.city} (${deal.code})` : deal.code;
+
           row.innerHTML = `
-            <td style="padding: 10px; border: 1px solid #ddd;">${rankBadge}${deal.city} (${deal.code})</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${rankBadge}${displayName}</td>
             <td style="padding: 10px; border: 1px solid #ddd; color: #2e7d32; font-weight: bold;">$${deal.price} CAD</td>
             <td style="padding: 10px; border: 1px solid #ddd;">${deal.outbound}</td>
             <td style="padding: 10px; border: 1px solid #ddd;">${deal.return}</td>
             <td style="padding: 10px; border: 1px solid #ddd; color: #666; font-size: 0.9em;">${deal.date}</td>
+          `;
           `;
 
           tableBody.appendChild(row);
