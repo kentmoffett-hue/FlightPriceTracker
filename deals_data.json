@@ -1,6 +1,6 @@
 [
   {
-    "city": "MCT",
+    "city": "Muscat",
     "code": "MCT",
     "price": 1451.0,
     "outbound": "2027-07-15",
@@ -8,7 +8,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "SVD",
+    "city": "Saint Vincent",
     "code": "SVD",
     "price": 820.0,
     "outbound": "2027-07-15",
@@ -16,7 +16,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "HAV",
+    "city": "Havana",
     "code": "HAV",
     "price": 926.0,
     "outbound": "2027-07-05",
@@ -24,7 +24,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "HUX",
+    "city": "Santa Mar\u00eda Huatulco",
     "code": "HUX",
     "price": 975.0,
     "outbound": "2027-07-01",
@@ -32,7 +32,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "DAD",
+    "city": "Da Nang",
     "code": "DAD",
     "price": 1452.0,
     "outbound": "2027-07-08",
@@ -40,7 +40,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "AKL",
+    "city": "Auckland",
     "code": "AKL",
     "price": 1919.0,
     "outbound": "2027-07-03",
@@ -48,7 +48,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "BNE",
+    "city": "Brisbane",
     "code": "BNE",
     "price": 2003.0,
     "outbound": "2027-07-29",
@@ -56,7 +56,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "SJU",
+    "city": "San Juan",
     "code": "SJU",
     "price": 573.0,
     "outbound": "2027-07-05",
@@ -64,7 +64,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "PMI",
+    "city": "Palma",
     "code": "PMI",
     "price": 891.0,
     "outbound": "2027-07-11",
@@ -72,7 +72,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "AYT",
+    "city": "Antalya",
     "code": "AYT",
     "price": 1310.0,
     "outbound": "2027-07-03",
@@ -80,7 +80,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "LOS",
+    "city": "Lagos",
     "code": "LOS",
     "price": 1488.0,
     "outbound": "2027-07-02",
@@ -88,7 +88,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "DPS",
+    "city": "Denpasar",
     "code": "DPS",
     "price": 1707.0,
     "outbound": "2027-07-26",
@@ -96,7 +96,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "DAR",
+    "city": "Dar es Salaam",
     "code": "DAR",
     "price": 1719.0,
     "outbound": "2027-07-03",
@@ -104,7 +104,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "FRA",
+    "city": "Frankfurt am Main",
     "code": "FRA",
     "price": 927.0,
     "outbound": "2027-07-12",
@@ -112,7 +112,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "DOH",
+    "city": "Doha",
     "code": "DOH",
     "price": 1403.0,
     "outbound": "2027-07-02",
@@ -120,7 +120,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "MEL",
+    "city": "Melbourne",
     "code": "MEL",
     "price": 1982.0,
     "outbound": "2027-07-31",
@@ -128,7 +128,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "HEL",
+    "city": "Helsinki",
     "code": "HEL",
     "price": 1091.0,
     "outbound": "2027-07-03",
@@ -136,7 +136,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "KRK",
+    "city": "Krak\u00f3w",
     "code": "KRK",
     "price": 1184.0,
     "outbound": "2027-07-05",
@@ -144,7 +144,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "SLU",
+    "city": "Saint Lucia",
     "code": "SLU",
     "price": 1203.0,
     "outbound": "2027-07-05",
@@ -152,7 +152,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "TUN",
+    "city": "Tunis",
     "code": "TUN",
     "price": 1248.0,
     "outbound": "2027-07-02",
@@ -160,7 +160,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "KUL",
+    "city": "Federal Territory of Kuala Lumpur",
     "code": "KUL",
     "price": 1445.0,
     "outbound": "2027-07-09",
@@ -168,7 +168,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "CEB",
+    "city": "Cebu City",
     "code": "CEB",
     "price": 1473.0,
     "outbound": "2027-07-18",
@@ -176,7 +176,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "ABV",
+    "city": "Abuja",
     "code": "ABV",
     "price": 1528.0,
     "outbound": "2027-07-02",
@@ -184,7 +184,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "MRU",
+    "city": "Mauritius Island",
     "code": "MRU",
     "price": 1922.0,
     "outbound": "2027-07-05",
@@ -192,7 +192,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "LYS",
+    "city": "Lyon",
     "code": "LYS",
     "price": 1118.0,
     "outbound": "2027-07-08",
@@ -200,7 +200,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "LCA",
+    "city": "Larnaca",
     "code": "LCA",
     "price": 1289.0,
     "outbound": "2027-07-03",
@@ -208,7 +208,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "ACC",
+    "city": "Accra",
     "code": "ACC",
     "price": 1640.0,
     "outbound": "2027-07-02",
@@ -216,7 +216,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "MLE",
+    "city": "Mal\u00e9",
     "code": "MLE",
     "price": 2101.0,
     "outbound": "2027-07-08",
@@ -224,7 +224,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "FDF",
+    "city": "Fort-de-France",
     "code": "FDF",
     "price": 744.0,
     "outbound": "2027-07-05",
@@ -232,7 +232,7 @@
     "date": "2026-11-03"
   },
   {
-    "city": "CMN",
+    "city": "Casablanca",
     "code": "CMN",
     "price": 1183.0,
     "outbound": "2027-07-08",
