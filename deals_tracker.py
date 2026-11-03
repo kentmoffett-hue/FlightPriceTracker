@@ -27,7 +27,7 @@ cursor.execute(
 conn.commit()
 
 # ---------------------------------------------------------
-# 2. FETCH FLEXIBLE DEALS FOR JULY 2027
+# 2. FETCH GLOBAL FLEXIBLE DEALS FOR JULY 2027
 # ---------------------------------------------------------
 api_key = os.getenv("SERPAPI_KEY")
 today_str = date.today().isoformat()
@@ -35,25 +35,6 @@ today_str = date.today().isoformat()
 if not api_key:
     print("❌ ERROR: SERPAPI_KEY environment variable is missing!")
     exit()
-
-if os.path.exists("airports.json"):
-    with open("airports.json", "r", encoding="utf-8") as f:
-        airports_list = json.load(f)
-    target_airports = {
-        item["code"]: {
-            "city": item.get("city"),
-            "airport_name": item.get("airport_name", item["code"]),
-            "display_label": (
-                f"{item.get('city')} ({item['code']})"
-                if item.get("city") == "Paris"
-                else item.get("city")
-            ),
-        }
-        for item in airports_list
-    }
-else:
-    print("❌ WARNING: airports.json not found!")
-    target_airports = {}
 
 try:
     params = {
@@ -73,24 +54,29 @@ try:
         print(f"❌ SerpApi Deals Error: {results['error']}")
     else:
         deals = results.get("deals", [])
-        print(
-            f"🔍 Flexible deals search returned {len(deals)} global options."
-        )
+        print(f"🔍 Global deals search returned {len(deals)} options.")
 
         best_deals_found = {}
 
         for deal in deals:
+            # Extract destination details from global explore results
             dest_code = deal.get("arrival_airport_code") or deal.get(
                 "destination_id"
             )
+            city_name = deal.get("arrival_airport_name") or deal.get(
+                "destination_name"
+            )
             price = deal.get("price")
 
-            if dest_code in target_airports and price is not None:
+            if dest_code and price is not None:
+                # Keep the cheapest price found for each unique destination
                 if (
                     dest_code not in best_deals_found
                     or price < best_deals_found[dest_code]["price"]
                 ):
                     best_deals_found[dest_code] = {
+                        "city": city_name or dest_code,
+                        "code": dest_code,
                         "price": price,
                         "outbound_date": deal.get(
                             "outbound_date", "Flexible"
@@ -99,15 +85,14 @@ try:
                     }
 
         for code, data in best_deals_found.items():
-            info = target_airports[code]
             cursor.execute(
                 """
                 INSERT INTO deal_data (city, airport_name, code, price, outbound_date, return_date, date_searched)
                 VALUES (?, ?, ?, ?, ?, ?, ?)
             """,
                 (
-                    info["display_label"],
-                    info["airport_name"],
+                    data["city"],
+                    data["city"],
                     code,
                     data["price"],
                     data["outbound_date"],
@@ -116,7 +101,7 @@ try:
                 ),
             )
             print(
-                f"✅ Saved Deal: {info['display_label']} - ${data['price']} CAD ({data['outbound_date']} to {data['return_date']})"
+                f"✅ Saved Global Deal: {data['city']} ({code}) - ${data['price']} CAD"
             )
 
 except Exception as e:
@@ -146,5 +131,5 @@ json_data = [
 with open("deals_data.json", "w", encoding="utf-8") as f:
     json.dump(json_data, f, indent=2)
 
-print(f"📊 Exported {len(json_data)} flexible deals to deals_data.json")
+print(f"📊 Exported {len(json_data)} global deals to deals_data.json")
 conn.close()
