@@ -10,11 +10,14 @@ from serpapi import GoogleSearch
 conn = sqlite3.connect("deals_tracker.db")
 cursor = conn.cursor()
 
+# Drop and recreate table to cleanly handle the new country column
+cursor.execute("DROP TABLE IF EXISTS deal_data")
 cursor.execute(
     """
-    CREATE TABLE IF NOT EXISTS deal_data (
+    CREATE TABLE deal_data (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         city TEXT,
+        country TEXT,
         code TEXT,
         price REAL,
         outbound_date TEXT,
@@ -23,9 +26,6 @@ cursor.execute(
     )
 """
 )
-
-# Clear out older deals on each run so the table reflects the freshest global explore sweep
-cursor.execute("DELETE FROM deal_data")
 conn.commit()
 
 # ---------------------------------------------------------
@@ -64,19 +64,28 @@ try:
             dest_code = deal.get("arrival_airport_code") or deal.get(
                 "destination_id"
             )
-            # Added "name" as the primary key for destination/city names
-            city_name = (
+            raw_name = (
                 deal.get("name")
                 or deal.get("arrival_airport_name")
                 or deal.get("destination_name")
                 or deal.get("snippet")
             )
             price = deal.get("price")
+            country = deal.get("country") or deal.get("destination_country")
+
+            # Parse city and country if raw name contains a comma (e.g., "Muscat, Oman")
+            city_name = raw_name
+            if not country and raw_name and "," in raw_name:
+                parts = [p.strip() for p in raw_name.split(",")]
+                if len(parts) >= 2:
+                    city_name = parts[0]
+                    country = parts[-1]
 
             if dest_code and price is not None:
-                # Fallback if city name is missing or matches code
                 if not city_name or city_name == dest_code:
                     city_name = dest_code
+                if not country:
+                    country = ""
 
                 # Keep the cheapest price found for each unique destination
                 if (
@@ -85,6 +94,7 @@ try:
                 ):
                     best_deals_found[dest_code] = {
                         "city": city_name,
+                        "country": country,
                         "code": dest_code,
                         "price": price,
                         "outbound_date": deal.get(
@@ -96,11 +106,12 @@ try:
         for code, data in best_deals_found.items():
             cursor.execute(
                 """
-                INSERT INTO deal_data (city, code, price, outbound_date, return_date, date_searched)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO deal_data (city, country, code, price, outbound_date, return_date, date_searched)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
             """,
                 (
                     data["city"],
+                    data["country"],
                     code,
                     data["price"],
                     data["outbound_date"],
@@ -109,7 +120,7 @@ try:
                 ),
             )
             print(
-                f"✅ Saved Global Deal: {data['city']} ({code}) - ${data['price']} CAD"
+                f"✅ Saved Global Deal: {data['city']}, {data['country']} ({code}) - ${data['price']} CAD"
             )
 
 except Exception as e:
@@ -121,18 +132,19 @@ conn.commit()
 # 3. EXPORT TO deals_data.json
 # ---------------------------------------------------------
 cursor.execute(
-    "SELECT city, code, price, outbound_date, return_date, date_searched FROM deal_data"
+    "SELECT city, country, code, price, outbound_date, return_date, date_searched FROM deal_data"
 )
 rows = cursor.fetchall()
 
 json_data = [
     {
         "city": row[0],
-        "code": row[1],
-        "price": row[2],
-        "outbound": row[3],
-        "return": row[4],
-        "date": row[5],
+        "country": row[1],
+        "code": row[2],
+        "price": row[3],
+        "outbound": row[4],
+        "return": row[5],
+        "date": row[6],
     }
     for row in rows
 ]
