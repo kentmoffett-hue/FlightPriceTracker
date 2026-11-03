@@ -113,17 +113,18 @@ conn.commit()
 # 3. EXPORT TO deals_data.json
 # ---------------------------------------------------------
 cursor.execute(
-    "SELECT city, price, outbound_date, return_date, date_searched FROM deal_data"
+    "SELECT city, code, price, outbound_date, return_date, date_searched FROM deal_data"
 )
 rows = cursor.fetchall()
 
 json_data = [
     {
         "city": row[0],
-        "price": row[1],
-        "outbound": row[2],
-        "return": row[3],
-        "date": row[4],
+        "code": row[1],
+        "price": row[2],
+        "outbound": row[3],
+        "return": row[4],
+        "date": row[5],
     }
     for row in rows
 ]
