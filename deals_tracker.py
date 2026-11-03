@@ -15,7 +15,6 @@ cursor.execute(
     CREATE TABLE IF NOT EXISTS deal_data (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         city TEXT,
-        airport_name TEXT,
         code TEXT,
         price REAL,
         outbound_date TEXT,
@@ -24,6 +23,9 @@ cursor.execute(
     )
 """
 )
+
+# Clear out older deals on each run so the table reflects the freshest global explore sweep
+cursor.execute("DELETE FROM deal_data")
 conn.commit()
 
 # ---------------------------------------------------------
@@ -59,23 +61,28 @@ try:
         best_deals_found = {}
 
         for deal in deals:
-            # Extract destination details from global explore results
             dest_code = deal.get("arrival_airport_code") or deal.get(
                 "destination_id"
             )
-            city_name = deal.get("arrival_airport_name") or deal.get(
-                "destination_name"
+            city_name = (
+                deal.get("arrival_airport_name")
+                or deal.get("destination_name")
+                or deal.get("snippet")
             )
             price = deal.get("price")
 
             if dest_code and price is not None:
+                # Fallback if city name is missing or matches code
+                if not city_name or city_name == dest_code:
+                    city_name = dest_code
+
                 # Keep the cheapest price found for each unique destination
                 if (
                     dest_code not in best_deals_found
                     or price < best_deals_found[dest_code]["price"]
                 ):
                     best_deals_found[dest_code] = {
-                        "city": city_name or dest_code,
+                        "city": city_name,
                         "code": dest_code,
                         "price": price,
                         "outbound_date": deal.get(
@@ -87,11 +94,10 @@ try:
         for code, data in best_deals_found.items():
             cursor.execute(
                 """
-                INSERT INTO deal_data (city, airport_name, code, price, outbound_date, return_date, date_searched)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                INSERT INTO deal_data (city, code, price, outbound_date, return_date, date_searched)
+                VALUES (?, ?, ?, ?, ?, ?)
             """,
                 (
-                    data["city"],
                     data["city"],
                     code,
                     data["price"],
