@@ -1,30 +1,30 @@
 [
   {
-    "city": "Muscat",
-    "country": "Oman",
-    "code": "MCT",
-    "price": 1451.0,
-    "outbound": "2027-07-15",
-    "return": "2027-07-21",
-    "date": "2026-11-03"
+    "city": "Denpasar",
+    "country": "Indonesia",
+    "code": "DPS",
+    "price": 1482.0,
+    "outbound": "2027-07-09",
+    "return": "2027-07-16",
+    "date": "2026-11-05"
   },
   {
     "city": "Saint Vincent",
     "country": "St. Vincent & Grenadines",
     "code": "SVD",
-    "price": 820.0,
+    "price": 790.0,
     "outbound": "2027-07-15",
     "return": "2027-07-22",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
-    "city": "Santa Mar\u00eda Huatulco",
-    "country": "Mexico",
-    "code": "HUX",
-    "price": 975.0,
-    "outbound": "2027-07-01",
-    "return": "2027-07-07",
-    "date": "2026-11-03"
+    "city": "Muscat",
+    "country": "Oman",
+    "code": "MCT",
+    "price": 1451.0,
+    "outbound": "2027-07-22",
+    "return": "2027-07-31",
+    "date": "2026-11-05"
   },
   {
     "city": "Da Nang",
@@ -33,7 +33,16 @@
     "price": 1452.0,
     "outbound": "2027-07-08",
     "return": "2027-07-16",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
+  },
+  {
+    "city": "Santa Mar\u00eda Huatulco",
+    "country": "Mexico",
+    "code": "HUX",
+    "price": 985.0,
+    "outbound": "2027-07-22",
+    "return": "2027-07-28",
+    "date": "2026-11-05"
   },
   {
     "city": "Auckland",
@@ -42,52 +51,43 @@
     "price": 1919.0,
     "outbound": "2027-07-24",
     "return": "2027-07-30",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
     "city": "Brisbane",
     "country": "Australia",
     "code": "BNE",
-    "price": 2003.0,
+    "price": 2002.0,
     "outbound": "2027-07-29",
-    "return": "2027-08-04",
-    "date": "2026-11-03"
-  },
-  {
-    "city": "Havana",
-    "country": "Cuba",
-    "code": "HAV",
-    "price": 983.0,
-    "outbound": "2027-07-02",
-    "return": "2027-07-08",
-    "date": "2026-11-03"
-  },
-  {
-    "city": "Dar es Salaam",
-    "country": "Tanzania",
-    "code": "DAR",
-    "price": 1719.0,
-    "outbound": "2027-07-03",
-    "return": "2027-07-12",
-    "date": "2026-11-03"
+    "return": "2027-08-06",
+    "date": "2026-11-05"
   },
   {
     "city": "San Juan",
     "country": "Puerto Rico",
     "code": "SJU",
-    "price": 580.0,
+    "price": 574.0,
     "outbound": "2027-07-05",
     "return": "2027-07-13",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
     "city": "Palma",
     "country": "Spain",
     "code": "PMI",
-    "price": 891.0,
+    "price": 892.0,
     "outbound": "2027-07-11",
     "return": "2027-07-19",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
+  },
+  {
+    "city": "Havana",
+    "country": "Cuba",
+    "code": "HAV",
+    "price": 995.0,
+    "outbound": "2027-07-02",
+    "return": "2027-07-08",
+    "date": "2026-11-05"
   },
   {
     "city": "Antalya",
@@ -95,62 +95,53 @@
     "code": "AYT",
     "price": 1310.0,
     "outbound": "2027-07-03",
-    "return": "2027-07-12",
-    "date": "2026-11-03"
+    "return": "2027-07-10",
+    "date": "2026-11-05"
   },
   {
     "city": "Lagos",
     "country": "Nigeria",
     "code": "LOS",
-    "price": 1488.0,
+    "price": 1489.0,
     "outbound": "2027-07-02",
     "return": "2027-07-08",
-    "date": "2026-11-03"
-  },
-  {
-    "city": "Denpasar",
-    "country": "Indonesia",
-    "code": "DPS",
-    "price": 1707.0,
-    "outbound": "2027-07-26",
-    "return": "2027-08-04",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
     "city": "Frankfurt am Main",
     "country": "Germany",
     "code": "FRA",
-    "price": 927.0,
-    "outbound": "2027-07-12",
-    "return": "2027-07-18",
-    "date": "2026-11-03"
+    "price": 928.0,
+    "outbound": "2027-07-26",
+    "return": "2027-08-04",
+    "date": "2026-11-05"
   },
   {
     "city": "Doha",
     "country": "Qatar",
     "code": "DOH",
-    "price": 1403.0,
+    "price": 1404.0,
     "outbound": "2027-07-02",
     "return": "2027-07-08",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
-    "city": "Abuja",
-    "country": "Nigeria",
-    "code": "ABV",
-    "price": 1528.0,
+    "city": "Accra",
+    "country": "Ghana",
+    "code": "ACC",
+    "price": 1593.0,
     "outbound": "2027-07-02",
-    "return": "2027-07-09",
-    "date": "2026-11-03"
+    "return": "2027-07-08",
+    "date": "2026-11-05"
   },
   {
     "city": "Melbourne",
     "country": "Australia",
     "code": "MEL",
-    "price": 1982.0,
+    "price": 1981.0,
     "outbound": "2027-07-31",
     "return": "2027-08-06",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
     "city": "Helsinki",
@@ -159,7 +150,7 @@
     "price": 1091.0,
     "outbound": "2027-07-03",
     "return": "2027-07-11",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
     "city": "Krak\u00f3w",
@@ -168,16 +159,34 @@
     "price": 1184.0,
     "outbound": "2027-07-05",
     "return": "2027-07-14",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
     "city": "Tunis",
     "country": "Tunisia",
     "code": "TUN",
-    "price": 1248.0,
-    "outbound": "2027-07-02",
-    "return": "2027-07-08",
-    "date": "2026-11-03"
+    "price": 1251.0,
+    "outbound": "2027-07-05",
+    "return": "2027-07-13",
+    "date": "2026-11-05"
+  },
+  {
+    "city": "Federal Territory of Kuala Lumpur",
+    "country": "Malaysia",
+    "code": "KUL",
+    "price": 1445.0,
+    "outbound": "2027-07-23",
+    "return": "2027-08-01",
+    "date": "2026-11-05"
+  },
+  {
+    "city": "Bangkok",
+    "country": "Thailand",
+    "code": "BKK",
+    "price": 1467.0,
+    "outbound": "2027-07-29",
+    "return": "2027-08-04",
+    "date": "2026-11-05"
   },
   {
     "city": "Cebu City",
@@ -185,53 +194,44 @@
     "code": "CEB",
     "price": 1473.0,
     "outbound": "2027-07-18",
-    "return": "2027-07-24",
-    "date": "2026-11-03"
+    "return": "2027-07-27",
+    "date": "2026-11-05"
+  },
+  {
+    "city": "Abuja",
+    "country": "Nigeria",
+    "code": "ABV",
+    "price": 1529.0,
+    "outbound": "2027-07-05",
+    "return": "2027-07-11",
+    "date": "2026-11-05"
   },
   {
     "city": "Mauritius Island",
     "country": "Mauritius",
     "code": "MRU",
-    "price": 1922.0,
+    "price": 1923.0,
     "outbound": "2027-07-05",
     "return": "2027-07-12",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
     "city": "Lyon",
     "country": "France",
     "code": "LYS",
-    "price": 1118.0,
-    "outbound": "2027-07-08",
-    "return": "2027-07-14",
-    "date": "2026-11-03"
+    "price": 1119.0,
+    "outbound": "2027-07-12",
+    "return": "2027-07-20",
+    "date": "2026-11-05"
   },
   {
-    "city": "Larnaca",
-    "country": "Cyprus",
-    "code": "LCA",
-    "price": 1289.0,
-    "outbound": "2027-07-03",
-    "return": "2027-07-11",
-    "date": "2026-11-03"
-  },
-  {
-    "city": "Accra",
-    "country": "Ghana",
-    "code": "ACC",
-    "price": 1640.0,
-    "outbound": "2027-07-02",
-    "return": "2027-07-08",
-    "date": "2026-11-03"
-  },
-  {
-    "city": "Mal\u00e9",
-    "country": "Maldives",
-    "code": "MLE",
-    "price": 2101.0,
-    "outbound": "2027-07-08",
-    "return": "2027-07-15",
-    "date": "2026-11-03"
+    "city": "Sydney",
+    "country": "Australia",
+    "code": "SYD",
+    "price": 1847.0,
+    "outbound": "2027-07-31",
+    "return": "2027-08-06",
+    "date": "2026-11-05"
   },
   {
     "city": "Fort-de-France",
@@ -240,25 +240,16 @@
     "price": 744.0,
     "outbound": "2027-07-05",
     "return": "2027-07-11",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
   },
   {
-    "city": "Casablanca",
-    "country": "Morocco",
-    "code": "CMN",
-    "price": 1183.0,
-    "outbound": "2027-07-08",
-    "return": "2027-07-14",
-    "date": "2026-11-03"
-  },
-  {
-    "city": "Belo Horizonte",
-    "country": "Brazil",
-    "code": "CNF",
-    "price": 1198.0,
-    "outbound": "2027-07-29",
-    "return": "2027-08-04",
-    "date": "2026-11-03"
+    "city": "Larnaca",
+    "country": "Cyprus",
+    "code": "LCA",
+    "price": 1289.0,
+    "outbound": "2027-07-10",
+    "return": "2027-07-18",
+    "date": "2026-11-05"
   },
   {
     "city": "Kochi",
@@ -267,6 +258,15 @@
     "price": 1859.0,
     "outbound": "2027-07-12",
     "return": "2027-07-20",
-    "date": "2026-11-03"
+    "date": "2026-11-05"
+  },
+  {
+    "city": "Madeira",
+    "country": "Portugal",
+    "code": "FNC",
+    "price": 979.0,
+    "outbound": "2027-07-09",
+    "return": "2027-07-15",
+    "date": "2026-11-05"
   }
 ]
