@@ -1,39 +1,39 @@
 [
   {
-    "city": "Montego Bay",
-    "country": "Jamaica",
-    "code": "MBJ",
-    "price": 410.0,
-    "outbound": "2027-07-10",
-    "return": "2027-07-17",
-    "date": "2026-11-21"
+    "city": "Samana",
+    "country": "Dominican Republic",
+    "code": "AZS",
+    "price": 987.0,
+    "outbound": "2027-07-11",
+    "return": "2027-07-18",
+    "date": "2026-11-23"
   },
   {
     "city": "Tokyo",
     "country": "Japan",
     "code": "NRT",
-    "price": 1073.0,
+    "price": 1072.0,
     "outbound": "2027-07-26",
     "return": "2027-08-03",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
-    "city": "Guadalajara",
-    "country": "Mexico",
-    "code": "GDL",
+    "city": "Montego Bay",
+    "country": "Jamaica",
+    "code": "MBJ",
     "price": 450.0,
-    "outbound": "2027-07-15",
-    "return": "2027-07-22",
-    "date": "2026-11-21"
-  },
-  {
-    "city": "Punta Cana",
-    "country": "Dominican Republic",
-    "code": "PUJ",
-    "price": 426.0,
     "outbound": "2027-07-10",
     "return": "2027-07-17",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
+  },
+  {
+    "city": "Saint Vincent",
+    "country": "St. Vincent & Grenadines",
+    "code": "SVD",
+    "price": 723.0,
+    "outbound": "2027-07-15",
+    "return": "2027-07-22",
+    "date": "2026-11-23"
   },
   {
     "city": "Faro",
@@ -42,7 +42,7 @@
     "price": 762.0,
     "outbound": "2027-07-04",
     "return": "2027-07-12",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Denpasar",
@@ -51,16 +51,7 @@
     "price": 1441.0,
     "outbound": "2027-07-12",
     "return": "2027-07-19",
-    "date": "2026-11-21"
-  },
-  {
-    "city": "Saint Vincent",
-    "country": "St. Vincent & Grenadines",
-    "code": "SVD",
-    "price": 772.0,
-    "outbound": "2027-07-15",
-    "return": "2027-07-22",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "San Juan",
@@ -69,7 +60,34 @@
     "price": 522.0,
     "outbound": "2027-07-17",
     "return": "2027-07-25",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
+  },
+  {
+    "city": "Punta Cana",
+    "country": "Dominican Republic",
+    "code": "PUJ",
+    "price": 456.0,
+    "outbound": "2027-07-10",
+    "return": "2027-07-17",
+    "date": "2026-11-23"
+  },
+  {
+    "city": "Guadalajara",
+    "country": "Mexico",
+    "code": "GDL",
+    "price": 489.0,
+    "outbound": "2027-07-15",
+    "return": "2027-07-22",
+    "date": "2026-11-23"
+  },
+  {
+    "city": "Kailua-Kona",
+    "country": "United States",
+    "code": "KOA",
+    "price": 859.0,
+    "outbound": "2027-07-01",
+    "return": "2027-07-07",
+    "date": "2026-11-23"
   },
   {
     "city": "Auckland",
@@ -78,7 +96,7 @@
     "price": 1912.0,
     "outbound": "2027-07-29",
     "return": "2027-08-04",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Brisbane",
@@ -87,7 +105,16 @@
     "price": 1989.0,
     "outbound": "2027-07-29",
     "return": "2027-08-04",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
+  },
+  {
+    "city": "Fort-de-France",
+    "country": "Martinique",
+    "code": "FDF",
+    "price": 692.0,
+    "outbound": "2027-07-15",
+    "return": "2027-07-24",
+    "date": "2026-11-23"
   },
   {
     "city": "Santa Mar\u00eda Huatulco",
@@ -96,16 +123,25 @@
     "price": 1025.0,
     "outbound": "2027-07-01",
     "return": "2027-07-07",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
-    "city": "Havana",
-    "country": "Cuba",
-    "code": "HAV",
-    "price": 983.0,
-    "outbound": "2027-07-02",
-    "return": "2027-07-10",
-    "date": "2026-11-21"
+    "city": "Salvador",
+    "country": "Brazil",
+    "code": "SSA",
+    "price": 1108.0,
+    "outbound": "2027-07-26",
+    "return": "2027-08-01",
+    "date": "2026-11-23"
+  },
+  {
+    "city": "Kahului",
+    "country": "United States",
+    "code": "OGG",
+    "price": 636.0,
+    "outbound": "2027-07-01",
+    "return": "2027-07-09",
+    "date": "2026-11-23"
   },
   {
     "city": "Frankfurt am Main",
@@ -114,7 +150,7 @@
     "price": 920.0,
     "outbound": "2027-07-12",
     "return": "2027-07-19",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Belo Horizonte",
@@ -122,8 +158,8 @@
     "code": "CNF",
     "price": 1127.0,
     "outbound": "2027-07-26",
-    "return": "2027-08-01",
-    "date": "2026-11-21"
+    "return": "2027-08-03",
+    "date": "2026-11-23"
   },
   {
     "city": "Antalya",
@@ -132,16 +168,7 @@
     "price": 1312.0,
     "outbound": "2027-07-03",
     "return": "2027-07-10",
-    "date": "2026-11-21"
-  },
-  {
-    "city": "Kingston",
-    "country": "Jamaica",
-    "code": "KIN",
-    "price": 526.0,
-    "outbound": "2027-07-12",
-    "return": "2027-07-21",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Jakarta",
@@ -150,7 +177,7 @@
     "price": 1414.0,
     "outbound": "2027-07-12",
     "return": "2027-07-21",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Dar es Salaam",
@@ -159,25 +186,16 @@
     "price": 1746.0,
     "outbound": "2027-07-03",
     "return": "2027-07-12",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Melbourne",
     "country": "Australia",
     "code": "MEL",
     "price": 1991.0,
-    "outbound": "2027-07-31",
-    "return": "2027-08-06",
-    "date": "2026-11-21"
-  },
-  {
-    "city": "Fort-de-France",
-    "country": "Martinique",
-    "code": "FDF",
-    "price": 730.0,
-    "outbound": "2027-07-15",
-    "return": "2027-07-24",
-    "date": "2026-11-21"
+    "outbound": "2027-07-29",
+    "return": "2027-08-04",
+    "date": "2026-11-23"
   },
   {
     "city": "Krak\u00f3w",
@@ -186,25 +204,7 @@
     "price": 1186.0,
     "outbound": "2027-07-05",
     "return": "2027-07-14",
-    "date": "2026-11-21"
-  },
-  {
-    "city": "Tunis",
-    "country": "Tunisia",
-    "code": "TUN",
-    "price": 1256.0,
-    "outbound": "2027-07-04",
-    "return": "2027-07-13",
-    "date": "2026-11-21"
-  },
-  {
-    "city": "Recife",
-    "country": "Brazil",
-    "code": "REC",
-    "price": 1337.0,
-    "outbound": "2027-07-04",
-    "return": "2027-07-11",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Accra",
@@ -213,25 +213,43 @@
     "price": 1619.0,
     "outbound": "2027-07-04",
     "return": "2027-07-13",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
-    "city": "Entebbe",
-    "country": "Uganda",
-    "code": "EBB",
-    "price": 1679.0,
-    "outbound": "2027-07-03",
-    "return": "2027-07-11",
-    "date": "2026-11-21"
+    "city": "Guatemala City",
+    "country": "Guatemala",
+    "code": "GUA",
+    "price": 601.0,
+    "outbound": "2027-07-08",
+    "return": "2027-07-15",
+    "date": "2026-11-23"
+  },
+  {
+    "city": "Grenada",
+    "country": "Grenada",
+    "code": "GND",
+    "price": 736.0,
+    "outbound": "2027-07-11",
+    "return": "2027-07-18",
+    "date": "2026-11-23"
+  },
+  {
+    "city": "Lima",
+    "country": "Peru",
+    "code": "LIM",
+    "price": 761.0,
+    "outbound": "2027-07-04",
+    "return": "2027-07-12",
+    "date": "2026-11-23"
   },
   {
     "city": "Saint Lucia",
     "country": "St. Lucia",
     "code": "SLU",
     "price": 1209.0,
-    "outbound": "2027-07-05",
+    "outbound": "2027-07-03",
     "return": "2027-07-11",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Doha",
@@ -240,7 +258,7 @@
     "price": 1438.0,
     "outbound": "2027-07-02",
     "return": "2027-07-09",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   },
   {
     "city": "Lagos",
@@ -249,24 +267,6 @@
     "price": 1542.0,
     "outbound": "2027-07-02",
     "return": "2027-07-08",
-    "date": "2026-11-21"
-  },
-  {
-    "city": "Lyon",
-    "country": "France",
-    "code": "LYS",
-    "price": 1130.0,
-    "outbound": "2027-07-08",
-    "return": "2027-07-14",
-    "date": "2026-11-21"
-  },
-  {
-    "city": "Casablanca",
-    "country": "Morocco",
-    "code": "CMN",
-    "price": 1185.0,
-    "outbound": "2027-07-08",
-    "return": "2027-07-14",
-    "date": "2026-11-21"
+    "date": "2026-11-23"
   }
 ]
